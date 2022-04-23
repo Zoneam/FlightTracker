@@ -28,6 +28,7 @@
 <% flights.forEach(flight =>{  %>
       <div class="card">
         <div class="card-body">
+          <button class="close-btn btn btn-danger">X</button>
           <h5 class="card-title"><span>Airline: </span><%= flight.airline %></h5>
           <p class="card-text"><span>Airport: </span><%= flight.airport %></p>
           <p class="card-text"><span>Flight No: </span><%= flight.flightNo %></p>
