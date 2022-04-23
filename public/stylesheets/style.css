@@ -1,8 +1,29 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 21px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+#flights-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.card {
+  margin: 18px;
+  background-color: azure;
+  width: 450px;
+}
+
+span {
+  color:#3c88a6;
+}
+
+#create-wrapper {
+  margin: 0 auto;
+  width:500px;
 }
