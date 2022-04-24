@@ -19,12 +19,11 @@ function allFlights(req, res) {
       });
 }
 // done
-function createFlight(req, res) {
-    console.log(req.body)
-const flight = new Flight(req.body);
-flight.save(function(err) {
-  if (err) return res.render('/flights');
-  res.redirect('/flights');
+function createFlight({body: newFlightObj}, res) {
+  const flight = new Flight(newFlightObj);
+  flight.save(function(err) {
+    if (err) return res.render('/flights');
+    res.redirect('/flights');
 });
 }
 

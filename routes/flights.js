@@ -6,7 +6,6 @@ router.get('/' , flightCtrl.allFlights);
 
 router.get('/new' , flightCtrl.new);
 
-
 router.post('/new' , flightCtrl.createFlight);
 
 

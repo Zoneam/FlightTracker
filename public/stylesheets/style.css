@@ -17,6 +17,8 @@ a {
   margin: 18px;
   background-color: azure;
   width: 450px;
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.29); 
+box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.29);
 }
 
 span {
