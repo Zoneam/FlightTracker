@@ -28,7 +28,10 @@
 <% flights.forEach(flight =>{  %>
       <div class="card">
         <div class="card-body">
-          <button class="close-btn btn btn-danger">X</button>
+          <form action="flights/deleteflight/<%= flight.id %>?_method=DELETE"
+            class="delete-form" method="POST">
+          <button class="close-btn btn btn-danger" type="submit">X</button>
+        </form>
           <h5 class="card-title"><span>Airline: </span><%= flight.airline %></h5>
           <p class="card-text"><span>Airport: </span><%= flight.airport %></p>
           <p class="card-text"><span>Flight No: </span><%= flight.flightNo %></p>

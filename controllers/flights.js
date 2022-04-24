@@ -3,7 +3,8 @@ const Flight = require('../models/flight');
 module.exports = {
     new: newFlight,
     createFlight,
-    allFlights
+    allFlights,
+    deleteFlight
   };
 
   // done
@@ -27,3 +28,12 @@ function createFlight({body: newFlightObj}, res) {
 });
 }
 
+
+// done
+function deleteFlight({params: {id}},res) {
+  console.log("ID: ", id);
+  Flight.deleteOne({_id: id},function(err){
+    res.redirect('/flights');
+  });
+  
+}

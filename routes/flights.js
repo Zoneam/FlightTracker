@@ -8,5 +8,6 @@ router.get('/new' , flightCtrl.new);
 
 router.post('/new' , flightCtrl.createFlight);
 
+router.delete('/deleteflight/:id', flightCtrl.deleteFlight);
 
 module.exports = router;
