@@ -1,11 +1,13 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
 require('./config/database')
-var indexRouter = require('./routes/index');
-var flightsRouter = require('./routes/flights');
+let indexRouter = require('./routes/index');
+let detailsRouter = require('./routes/details');
+let flightsRouter = require('./routes/flights');
+
 let methodOverride = require('method-override');
 var app = express();
 
@@ -22,7 +24,7 @@ app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/flights', flightsRouter);
-
+app.use('/', detailsRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

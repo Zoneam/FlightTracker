@@ -32,23 +32,20 @@
 <form action="/flights/new" method="POST">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Airline</label>
-      <input class="form-control" name="airline">
+      <select class="selectpicker form-control" name="airline"> 
+        <option value="American">American</option>
+        <option value="Southwest">Southwest</option>
+        <option value="United" selected>United</option>
+      </select>
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Airport</label>
       <select class="selectpicker form-control" name="airport"> 
-        <option>Sacramento International</option>
-        <option>Dallas Airport</option>
-        <option>Orlando International Airport</option>
-        <option>San Francisco Intl.</option>
-        <option>John F Kennedy Intl</option>
-        <option>Denver Airport</option>
-        <option>O'Hare International Airport</option>
-        <option>Los Angeles International Airport</option>
-        <option>Charlotte Douglas International Airport</option>
-        <option>Harry Reid International Airport</option>
-        <option>Phoenix Sky Harbor International Airport</option>
-        <option>Miami International Airport</option>
+        <option value="AUS">AUS</option>
+        <option value="DFW">DFW</option>
+        <option value="DEN" selected>DEN</option>
+        <option value="LAX">LAX</option>
+        <option value="SAN">SAN</option>
       </select>
     </div>
     <div class="mb-3">

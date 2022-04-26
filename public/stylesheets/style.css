@@ -11,6 +11,8 @@ a {
   flex-wrap: wrap;
   margin: 0 auto;
   width: 1200px;
+  margin-top: 80px;
+  justify-content: space-around;
 }
 
 .card {
@@ -29,6 +31,7 @@ span {
 #create-wrapper {
   margin: 0 auto;
   width:500px;
+  
 }
 
 .close-btn {
@@ -38,4 +41,15 @@ span {
   width: 26px;
   padding: 0;
   line-height: 19px;
+}
+
+.details-btn {
+  position: absolute;
+  bottom: 0;
+  right:0;
+  margin: 10px;
+}
+
+#details-form {
+  margin-top:50px;
 }

@@ -10,4 +10,6 @@ router.post('/new' , flightCtrl.createFlight);
 
 router.delete('/deleteflight/:id', flightCtrl.deleteFlight);
 
+
+
 module.exports = router;

@@ -7,20 +7,20 @@ module.exports = {
     deleteFlight
   };
 
-  // done
+// Create Flight form render
 function newFlight(req, res) {
     res.render('flights/create');
 }
-//done
+// Rendering all Flights
 function allFlights(req, res) {
-    // console.log("Calling Flights:")
     Flight.find({}, function(err, flights) {
         // console.log("Flights: ",flights)
         res.render('flights/viewflights', { flights });
       });
 }
-// done
+// Createing Flight
 function createFlight({body: newFlightObj}, res) {
+if (newFlightObj.departs === '') newFlightObj.departs = new Date(new Date().setFullYear(new Date().getFullYear()+1));
   const flight = new Flight(newFlightObj);
   flight.save(function(err) {
     if (err) return res.render('/flights');
@@ -28,8 +28,7 @@ function createFlight({body: newFlightObj}, res) {
 });
 }
 
-
-// done
+// Deleting Flight
 function deleteFlight({params: {id}},res) {
   console.log("ID: ", id);
   Flight.deleteOne({_id: id},function(err){
