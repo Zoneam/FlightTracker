@@ -26,7 +26,7 @@
         </div>
       </nav>
 
-      <div id="create-wrapper">
+      <div id="details-wrapper">
         <h2>Add Details About This Flight</h2>
         <form action="/flights/<%= flight._id %>/details" method="POST" id="details-form">
         <div class="mb-3">
@@ -44,9 +44,11 @@
               <input class="form-control" name="arrival" type="date">
             </div>
             <button type="submit" class="btn btn-primary">Add Details</button>
+            
+            <h2 id="destinations"><%= flight.destinations.length ? "Destinations" : "" %></h2>
             <ul class="list-group">
                 <% flight.destinations.forEach(function(dest)  { %>
-                <li class="list-group-item">Airport: <%= dest?.airport || "N/A" %> - Arrival: <%= dest?.arrival || "No Arrival Date" %></li>
+                <li class="list-group-item list-group-item-info">Airport: <%= dest?.airport || "N/A" %> - Arrival: <%= dest?.arrival || "No Arrival Date" %></li>
                 <% }) %>
               </ul>
         </form>

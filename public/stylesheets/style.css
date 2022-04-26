@@ -6,6 +6,9 @@ a {
   color: #00B7FF;
 }
 
+#departs-span{
+  font-size: 15px;
+}
 #flights-wrapper{
   display: flex;
   flex-wrap: wrap;
@@ -25,13 +28,12 @@ box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.29);
 
 span {
   color:#3c88a6;
-  
+  font-size: 21px ;
 }
 
 #create-wrapper {
   margin: 0 auto;
   width:500px;
-  
 }
 
 .close-btn {
@@ -52,4 +54,13 @@ span {
 
 #details-form {
   margin-top:50px;
+}
+
+#details-wrapper{
+  margin: 0 auto;
+  width: 1000px;
+}
+
+#destinations{
+  margin-top: 35px;
 }
