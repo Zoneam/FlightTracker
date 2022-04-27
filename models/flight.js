@@ -28,7 +28,7 @@ const flightSchema = new Schema({
     departs: {
         type: Date,
         default: () => {
-            return new Date(new Date().setFullYear(new Date().getFullYear()+1)).toUTCString();
+            return new Date(new Date().setFullYear(new Date().getFullYear()+1));
         }
         },
     destinations: [destinationSchema]

@@ -21,8 +21,6 @@ function allFlights(req, res) {
 // Createing Flight
 function createFlight({body: newFlightObj}, res) {
   newFlightObj.departs === ''?newFlightObj.departs = undefined:newFlightObj.departs;
-
-  // if (newFlightObj.departs === '') newFlightObj.departs = new Date(new Date().setFullYear(new Date().getFullYear()+1));
   const flight = new Flight(newFlightObj); 
   console.log("FLIGHT",flight)
   flight.save(function(err) {
