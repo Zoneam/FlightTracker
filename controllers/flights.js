@@ -21,7 +21,6 @@ function allFlights(req, res) {
 function createFlight({body: newFlightObj}, res) {
   newFlightObj.departs === ''?newFlightObj.departs = undefined:newFlightObj.departs;
   const flight = new Flight(newFlightObj); 
-  console.log("FLIGHT",flight)
   flight.save(function(err) {
     if (err) return res.render('/flights');
     res.redirect('/flights');
@@ -30,7 +29,6 @@ function createFlight({body: newFlightObj}, res) {
 
 // Deleting Flight
 function deleteFlight({params: {id}},res) {
-  console.log("ID: ", id);
   Flight.deleteOne({_id: id},function(err){
     res.redirect('/flights');
   });
