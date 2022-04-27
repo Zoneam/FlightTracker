@@ -52,7 +52,7 @@ span {
   margin: 10px;
 }
 
-#details-form #addticket-form{
+#details-form, #addticket-form{
   margin-top:50px;
 }
 
@@ -62,6 +62,6 @@ span {
   margin-top:100px;
 }
 
-#destinations{
+#destinations, #tickets{
   margin-top: 35px;
 }
