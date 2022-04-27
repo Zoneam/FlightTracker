@@ -14,7 +14,6 @@ function newFlight(req, res) {
 // Rendering all Flights
 function allFlights(req, res) {
     Flight.find({}, function(err, flights) {
-        // console.log("Flights: ",flights)
         res.render('flights/viewflights', { flights });
       });
 }
@@ -35,5 +34,4 @@ function deleteFlight({params: {id}},res) {
   Flight.deleteOne({_id: id},function(err){
     res.redirect('/flights');
   });
-  
 }

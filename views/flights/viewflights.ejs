@@ -34,7 +34,7 @@
           <h5 class="card-title"><span>Airline: </span><%= flight.airline %></h5>
           <p class="card-text"><span>Airport: </span><%= flight.airport %></p>
           <p class="card-text"><span>Flight No: </span><%= flight.flightNo %></p>
-          <p class="card-text" id="departs-span"><span>Departs: </span><%= flight.departs %></p>
+          <p class="card-text" id="departs-span"><span>Departs: </span><%= flight.departs.toLocaleDateString('en-us') %></p>
           <form action="/flights/<%= flight.id %>/details/" class="details-form" method="GET">
           <button class="details-btn btn btn-success" type="submit">Details</button>
          </form>
