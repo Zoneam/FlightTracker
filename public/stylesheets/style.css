@@ -52,13 +52,14 @@ span {
   margin: 10px;
 }
 
-#details-form {
+#details-form #addticket-form{
   margin-top:50px;
 }
 
 #details-wrapper{
   margin: 0 auto;
   width: 1000px;
+  margin-top:100px;
 }
 
 #destinations{

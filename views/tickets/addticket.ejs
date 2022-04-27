@@ -10,7 +10,6 @@
     <title>Flight Details</title>
 </head>
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Navbar</a>
@@ -25,17 +24,17 @@
           </div>
         </div>
       </nav>
-
       <div id="details-wrapper">
         <h2>Details About This Flight #</h2>
         <form action="/flights/<%= id %>/tickets/new" method="POST" id="addticket-form">
         <div class="mb-3">
-            <label class="form-label">Seat</label>
-            <input class="form-control" name="seat" required pattern="[A-F][1-9]\d?">
+            <label class="form-label">Seat (EX: B4)</label>
+            <input class="form-control" name="seat" required pattern="[A-F][1-9]\d?" title="Format A thru F , followed by  1 thru 9!" placeholder="A1">
           </div>
           <div class="mb-3">
               <label class="form-label">Price</label>
-              <input class="form-control" name="price">
+              <span class="input-group-addon">$</span>
+              <input class="form-control" name="price" type="number" class="currency" placeholder="$250" >
             </div>
             <button type="submit" class="btn btn-primary">Add Ticket</button>
         </form>

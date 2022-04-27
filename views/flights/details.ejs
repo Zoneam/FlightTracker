@@ -47,7 +47,7 @@
 
             <h2>Tickets</h2>
             <% ticket.forEach(function(t)  { %>
-              <li class="list-group-item list-group-item-warning"> Ticket: <%= t.seat %> Price: <%= t.price %></li>
+              <li class="list-group-item list-group-item-warning"> Seat: <%= t.seat %> Price: $<%= t.price %></li>
               <% }) %>
 
             <h2 id="destinations"><%= flight.destinations.length ? "Destinations" : "" %></h2>

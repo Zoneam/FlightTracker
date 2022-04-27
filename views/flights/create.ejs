@@ -29,7 +29,7 @@
       <div id="create-wrapper">
 <h1>Create Flight</h1>
 
-<form action="/flights/new" method="POST">
+<form action="/flights/new" method="POST"  id="addticket-form">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Airline</label>
       <select class="selectpicker form-control" name="airline"> 
@@ -50,13 +50,13 @@
     </div>
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Flight No</label>
-        <input class="form-control" name="flightNo" type="number">
+        <input class="form-control" name="flightNo" required pattern="^\d{4}" title="Please enter 4 digit flight number!">
       </div>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Departure</label>
         <input class="form-control" type="datetime-local"  name="departs">
       </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Create Flight</button>
   </form>
 </div>
 
