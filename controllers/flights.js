@@ -10,7 +10,6 @@ module.exports = {
 // Create Flight form render
 function newFlight(req, res) {
   const flightCreationData = Flight.getCreationData();
-  console.log(flightCreationData);
     res.render('flights/create', { flightCreationData });
 }
 // Rendering all Flights

@@ -27,9 +27,7 @@ const flightSchema = new Schema({
         },
     departs: {
         type: Date,
-        default: () => {
-            return new Date(new Date().setFullYear(new Date().getFullYear() + 1));
-        }
+        default: () => new Date(new Date().setFullYear(new Date().getFullYear() + 1))
         },
     destinations: [destinationSchema]
 });
@@ -37,12 +35,13 @@ const flightSchema = new Schema({
 flightSchema.statics.getCreationData = function() {
     const airports = this.schema.path('airport').enumValues;
     const airlines = this.schema.path('airline').enumValues;
-    const defaultDepartureDate = this.schema.path('departs').default();
-  
+    const defaultDepartureDate = this.schema.path('departs').default()();
+    const defaultDepartureDateString = defaultDepartureDate.toISOString().slice(0,16);
+
     return {
       airports,
       airlines,
-      defaultDepartureDate,
+      defaultDepartureDateString,
     };
   };
 
