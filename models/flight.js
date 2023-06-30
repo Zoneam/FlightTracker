@@ -28,10 +28,22 @@ const flightSchema = new Schema({
     departs: {
         type: Date,
         default: () => {
-            return new Date(new Date().setFullYear(new Date().getFullYear()+1));
+            return new Date(new Date().setFullYear(new Date().getFullYear() + 1));
         }
         },
     destinations: [destinationSchema]
 });
+
+flightSchema.statics.getCreationData = function() {
+    const airports = this.schema.path('airport').enumValues;
+    const airlines = this.schema.path('airline').enumValues;
+    const defaultDepartureDate = this.schema.path('departs').default();
+  
+    return {
+      airports,
+      airlines,
+      defaultDepartureDate,
+    };
+  };
 
 module.exports = mongoose.model('Flight', flightSchema);

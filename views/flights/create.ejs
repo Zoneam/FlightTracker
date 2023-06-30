@@ -33,19 +33,19 @@
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Airline</label>
       <select class="selectpicker form-control" name="airline"> 
-        <option value="American">American</option>
-        <option value="Southwest">Southwest</option>
-        <option value="United" selected>United</option>
+        <option disabled selected value="">Airlines</option>
+        <% flightCreationData.airlines.forEach(function(airline) { %>
+          <option value="<%= airline %>"><%= airline %></option>
+        <% }) %>
       </select>
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Airport</label>
       <select class="selectpicker form-control" name="airport"> 
-        <option value="AUS">AUS</option>
-        <option value="DFW">DFW</option>
-        <option value="DEN" selected>DEN</option>
-        <option value="LAX">LAX</option>
-        <option value="SAN">SAN</option>
+        <option disabled selected value="">Airports</option>
+        <% flightCreationData.airports.forEach(function(airport) { %>
+          <option value="<%= airport %>"><%= airport %></option>
+        <% }) %>
       </select>
     </div>
     <div class="mb-3">
@@ -54,7 +54,8 @@
       </div>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Departure</label>
-        <input class="form-control" type="datetime-local"  name="departs">
+        <input class="form-control" type="datetime-local"  name="departs" value="<%= flightCreationData.defaultDepartureDate %>">
+        <%= flightCreationData.defaultDepartureDate %>
       </div>
     <button type="submit" class="btn btn-primary">Create Flight</button>
   </form>
