@@ -6,21 +6,27 @@ module.exports = {
     addDetails
   };
 
-  function addDetails(req, res) {
-    Flight.findById(req.params.id, function(err, flight) {
+  async function addDetails(req, res) {
+    try {
+      const flight = await Flight.findById(req.params.id);
       flight.destinations.push(req.body);
-      flight.save(function(err) {
-        res.redirect(`/flights/${flight._id}/details`);
-      });
-    });
+      await flight.save();
+      res.redirect(`/flights/${flight._id}/details`);
+    } catch (err) {
+      console.error(err);
+      res.redirect(`/flights/${req.params.id}/details`);
+    }
   }
-
-  function getDetails(req, res) {
-    Flight.findById(req.params.id, function(err, flight) {
-      Ticket.find({flight: flight._id}, function(err, ticket) {
-        res.render("flights/details", { flight, ticket });
-      })
-    });
-  }
-
   
+
+  async function getDetails(req, res) {
+    console.log(req.params.id)
+    try {
+      const flight = await Flight.findById(req.params.id);
+      const tickets = await Ticket.find({flight: flight._id});
+      res.render("flights/details", { flight, tickets });
+    } catch (err) {
+      console.error(err);
+      res.render("flights/details");
+    }
+  }

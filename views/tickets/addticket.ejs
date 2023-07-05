@@ -34,7 +34,7 @@
           <div class="mb-3">
               <label class="form-label">Price</label>
               <span class="input-group-addon">$</span>
-              <input class="form-control" name="price" type="number" class="currency" placeholder="$250" required>
+              <input class="form-control" name="price" pattern="^\d{4}$" type="number" class="currency" placeholder="$250" required>
             </div>
             <button type="submit" class="btn btn-primary">Add Ticket</button>
         </form>

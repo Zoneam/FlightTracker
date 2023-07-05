@@ -48,8 +48,8 @@
             </div>
             <button type="submit" class="btn btn-primary">Add Details</button>
             <button class="addticket-btn btn btn-warning" type="submit" method="GET" form="addticket-form">Add Ticket</button>
-            <h2 id="tickets"><%= ticket.length ? "Tickets" : "" %></h2>
-            <% ticket.forEach(function(t)  { %>
+            <h2 id="tickets"><%= tickets.length ? "Tickets" : "" %></h2>
+            <% tickets.forEach(function(t)  { %>
               <li class="list-group-item list-group-item-warning"> Seat: <%= t.seat %> Price: $<%= t.price %></li>
               <% }) %>
 
@@ -60,9 +60,5 @@
                 <% }) %>
               </ul>
         </form>
-
-        
-    
-  
 </body>
 </html>

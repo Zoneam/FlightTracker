@@ -12,25 +12,34 @@ function newFlight(req, res) {
   const flightCreationData = Flight.getCreationData();
     res.render('flights/create', { flightCreationData });
 }
+
 // Rendering all Flights
-function allFlights(req, res) {
-    Flight.find({}, function(err, flights) {
-        res.render('flights/viewflights', { flights });
-      });
+async function allFlights(req, res) {
+    try {
+      const flights = await Flight.find({});
+      res.render('flights/index', { flights });
+    } catch (err) {
+      res.redirect('/flights');
+    }
 }
-// Createing Flight
-function createFlight({body: newFlightObj}, res) {
-  newFlightObj.departs === ''?newFlightObj.departs = undefined:newFlightObj.departs;
-  const flight = new Flight(newFlightObj); 
-  flight.save(function(err) {
-    if (err) return res.render('/flights');
+
+// Creating Flight
+async function createFlight({body: newFlightObj}, res) {
+  try {
+    const flight = new Flight(newFlightObj);
+    await flight.save();
     res.redirect('/flights');
-});
+  } catch (err) {
+    res.render('/flights');
+  }
 }
 
 // Deleting Flight
-function deleteFlight({params: {id}},res) {
-  Flight.deleteOne({_id: id},function(err){
+async function deleteFlight({params: {id}}, res) {
+  try {
+    await Flight.findByIdAndRemove(id);
     res.redirect('/flights');
-  });
+  } catch (err) {
+    res.redirect('/flights');
+  }
 }

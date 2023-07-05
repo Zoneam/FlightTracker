@@ -5,15 +5,18 @@ module.exports = {
     newTicketView
   };
 // adding tickets
-function createTicket(req,res) {
-    req.body.flight = req.params.id
-    Ticket.create(req.body,  function(err, ticket) {
-        res.redirect(`/flights/${req.params.id}/details`);
-      });
+async function createTicket(req, res) {
+  try {
+    req.body.flight = req.params.id;
+    await Ticket.create(req.body);
+    res.redirect(`/flights/${req.params.id}/details`);
+  } catch (err) {
+    console.error(err);
+    res.redirect(`/flights/${req.params.id}/details`);
+  }
 }
 
 // Rendering Add Ticket view
-function newTicketView(req,res) {
-    let id = req.params.id
+function newTicketView({ params: {id:id}},res) {
     res.render('tickets/addticket', { id }  );
 }

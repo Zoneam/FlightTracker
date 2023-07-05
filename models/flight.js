@@ -13,7 +13,7 @@ const destinationSchema = new Schema({
 const flightSchema = new Schema({
     airline: {
         type: String,
-        enum: [ 'American', 'Southwest', 'United']
+        enum: ['American', 'Southwest', 'United']
         },
     airport: {
         type: String,
