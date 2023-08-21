@@ -33,7 +33,6 @@
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Airline</label>
       <select class="selectpicker form-control" name="airline"> 
-        <option disabled selected value="">Airlines</option>
         <% flightCreationData.airlines.forEach(function(airline) { %>
           <option value="<%= airline %>"><%= airline %></option>
         <% }) %>
@@ -42,7 +41,6 @@
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Airport</label>
       <select class="selectpicker form-control" name="airport"> 
-        <option disabled selected value="">Airports</option>
         <% flightCreationData.airports.forEach(function(airport) { %>
           <option value="<%= airport %>"><%= airport %></option>
         <% }) %>

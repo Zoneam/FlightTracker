@@ -26,8 +26,7 @@ async function allFlights(req, res) {
 // Creating Flight
 async function createFlight({body: newFlightObj}, res) {
   try {
-    const flight = new Flight(newFlightObj);
-    await flight.save();
+    await Flight.create(newFlightObj);
     res.redirect('/flights');
   } catch (err) {
     res.render('/flights');
