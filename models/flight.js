@@ -46,4 +46,8 @@ flightSchema.statics.getCreationData = function() {
     };
   };
 
+flightSchema.methods.getDestination = function(id) {
+    return this.destinations.find(destination => destination._id.equals(id));
+    };
+
 module.exports = mongoose.model('Flight', flightSchema);

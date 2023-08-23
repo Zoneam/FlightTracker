@@ -20,7 +20,6 @@ module.exports = {
   
 
   async function getDetails(req, res) {
-    console.log(req.params.id)
     try {
       const flight = await Flight.findById(req.params.id);
       const tickets = await Ticket.find({flight: flight._id});
