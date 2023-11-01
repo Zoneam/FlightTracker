@@ -11,10 +11,10 @@ module.exports = {
       const flight = await Flight.findById(req.params.id);
       flight.destinations.push(req.body);
       await flight.save();
-      res.redirect(`/flights/${flight._id}/details`);
+      res.redirect(`/flights/${flight._id}`);
     } catch (err) {
       console.error(err);
-      res.redirect(`/flights/${req.params.id}/details`);
+      res.redirect(`/flights/${req.params.id}`);
     }
   }
   

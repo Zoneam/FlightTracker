@@ -1,20 +1,19 @@
 <%- include('../partials/header') %>
 
       <div id="flights-wrapper">
-<% flights.forEach(flight =>{  %>
+<% flights.forEach(flight => {  %>
       <div class="card">
         <div class="card-body">
-          <form action="/flights/deleteflight/<%= flight.id %>?_method=DELETE"
+          <form action="/flights/<%= flight._id %>?_method=DELETE"
             class="delete-form" method="POST">
           <button class="close-btn btn btn-danger" type="submit">X</button>
          </form>
+         <a href="/flights/<%= flight._id %>" class="airline-card">
           <h5 class="card-title"><span>Airline: </span><%= flight.airline %></h5>
           <p class="card-text"><span>Airport: </span><%= flight.airport %></p>
           <p class="card-text"><span>Flight No: </span><%= flight.flightNo %></p>
           <p class="card-text" id="departs-span"><span>Departs: </span><%= flight.departs.toLocaleDateString('en-us') %></p>
-          <form action="/flights/<%= flight.id %>/details/" class="details-form" method="GET">
-          <button class="details-btn btn btn-success" type="submit">Details</button>
-         </form>
+         </a>
         </div>
       </div>
 <% }) %>

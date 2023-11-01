@@ -9,10 +9,10 @@ router.get('/new' , flightCtrl.new);
 
 router.post('/new' , flightCtrl.createFlight);
 
-router.delete('/deleteflight/:id', flightCtrl.deleteFlight);
+router.delete('/:id', flightCtrl.deleteFlight);
 
-router.get('/:id/details' , detailsCtrl.getDetails);
+router.get('/:id' , detailsCtrl.getDetails);
 
-router.post('/:id/details' , detailsCtrl.addDetails);
+router.post('/:id' , detailsCtrl.addDetails);
 
 module.exports = router;
